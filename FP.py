@@ -1,4 +1,8 @@
 # your code goes here#write performer names to the file
+
+performers = [] #list of all the performers
+per_day_dict = {} #key value pair for performer and their Day's
+
 def writeToFile(performers):
     length = len(performers)
     filename = "textfile"+str(length)+".txt"
@@ -7,15 +11,13 @@ def writeToFile(performers):
         file.write(performer)
         file.write("\n")
         file.close()
-performers = [] #list of all the performers
-per_price_dict = {} #key value pair for performer and their ticket price
-
+        
 def admin():
     while True:
         print ('1. Add a performer')
         print ('2. Print performers')
         print ('3. Set price for each performer')
-        print ('4. Print performers and their prices')
+        print ('4. Print performers and their Days')
         print ('5. Exit admin mode')
         i = int(input());
         if i==1:
@@ -30,9 +32,9 @@ def admin():
             for performer in performers:
                 print ('Enter the price for ')+ performer
                 price = int(input())
-                per_price_dict[performer] = price #Add the price to ther performe
+                per_day_dict[performer] = day #Add the Days to ther performe
         if i==4:
-            for key,value in per_price_dict.items(): #print the performers and their per ticket price
+            for key,value in per_day_dict.items(): #print the performers and their days
                 print (key)
                 print (value)
         if i==5:
